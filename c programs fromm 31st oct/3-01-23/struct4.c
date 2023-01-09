@@ -13,6 +13,10 @@ void read(struct student *k)
    for (int i = 0; i < 5; i++)
    {
     int sum=(*(k+i)).m1+(*(k+i)).m2+(*(k+i)).m3;
+    if ((sum/5)<50)
+    {
+        printf("%d\n",(*(k+i)).roll);
+    }
    }
    
 }

@@ -34,12 +34,12 @@ int main()
         getchar();
         printf("1foradno 0forpassno\n");
         scanf("%d",&n);
-        if (n=1)
+        if (n==1)
         {
             printf("adno");
             scanf("%d",&s1[i].in.adno);
         }
-        if (n=0)
+        if (n==0)
         {
             printf("passno");
             scanf("%d",&s1[i].in.passno);
