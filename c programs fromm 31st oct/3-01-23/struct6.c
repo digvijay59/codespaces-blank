@@ -1,46 +1,33 @@
 #include<stdio.h>
-struct student
-{
+struct nn{
     int roll;
     int age;
-    int mark[4];
-}s1[4];
-
-void disp(struct student *k)
-{
-    for (int i = 0; i < 4; i++)
-    {
-        printf("roll=%d\n",(*(k+i)).roll);
-        printf("name=%s\n",(*(k+i)).name);
-        printf("adno=%d\n",(*(k+i)).in.adno);
-        printf("passno=%d\n",(*(k+i)).in.passno);
-    }
-}
-
+    int marks[4];
+}s1;
 int main()
 {
-    for (int i=0;i<3;i++)
-    {
-        int n;
-        printf("roll\n");
-        scanf("%d",&s1[i].roll);
-        printf("name\n");
-        scanf("%s",&s1[i].name);
-        getchar();
-        printf("1foradno 0forpassno\n");
-        scanf("%d",&n);
-        if (n=1)
-        {
-            printf("adno");
-            scanf("%d",&s1[i].in.adno);
-        }
-        if (n=0)
-        {
-            printf("passno");
-            scanf("%d",&s1[i].in.passno);
-        }
-        
+    double avg,total;
+    printf("enter roll ");
+    scanf("%d",&s1.roll);
+    printf("enter age ");
+    scanf("%d",&s1.age);
+    for(int i=0;i<4;i++){
+        printf("enter marks ");
+        scanf("%d",&s1.marks[i]);
     }
-    disp(&s1);
-
+    int max=s1.marks[0];
+    int min=s1.marks[0];
+    for(int i=0;i<4;i++){
+        if(s1.marks[i]>max)
+            max=s1.marks[i];
+        if(s1.marks[i]<min)
+            min=s1.marks[i];
+        total+=s1.marks[i];
+   }
+    avg=total/4.0;
+    printf("maximum is %d ",max);
+    printf("minimum is %d ",min);
+    printf("average is %lf",avg);
+    printf("total is %lf",total);
+    return 0;
 }
